@@ -1,0 +1,26 @@
+<div class="container-fluid" mt-3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Category</th>
+                <th scope="col">Assignee</th>
+                <th scope="col">Starttime</th>
+                <th scope="col">Endtime</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of TodoData">
+                <td>{{row.id}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.date}}</td>
+                <td>{{row.category}}</td>
+                <td>{{row.assignee}}</td>
+                <td>{{row.starttime}}</td>
+                <td>{{row.endtime}}</td>
+                  </tr>
+        </tbody>
+    </table>
+</div>

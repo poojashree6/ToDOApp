@@ -1,0 +1,79 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "grocery"
+    },
+    {
+      "name": "personal",
+      "id": 2
+    },
+    {
+      "name": "Professional",
+      "id": 3
+    },
+    {
+      "name": "shopping",
+      "id": 4
+    }
+  ],
+  "Todo": [
+    {
+      "id": 1,
+      "name": "Buying  vegitables",
+      "date": "2023-04-18",
+      "category": "grocery",
+      "assignee": "father",
+      "starttime": "07:39",
+      "endtime": "08:39"
+    },
+    {
+      "name": "Buying Notebooks",
+      "date": "2023-04-20",
+      "category": "personal",
+      "assignee": "Poojashree",
+      "starttime": "11:00",
+      "endtime": "11:30",
+      "id": 2
+    },
+    {
+      "name": "cooking",
+      "date": "2023-04-18",
+      "category": "work",
+      "assignee": "Mother",
+      "starttime": "10:06",
+      "endtime": "11:06",
+      "id": 3
+    },
+    {
+      "name": "buying noodels",
+      "date": "2023-04-20",
+      "category": "grocery",
+      "assignee": "kavya",
+      "starttime": "10:50",
+      "endtime": "11:00",
+      "id": 4
+    },
+    {
+      "name": "buying pen",
+      "date": "2023-04-22",
+      "category": "personal",
+      "assignee": "pooja",
+      "starttime": "09:36",
+      "endtime": "10:36",
+      "id": 5
+    },
+    {
+      "name": "Buyingcar",
+      "date": "2023-04-25",
+      "category": "personal",
+      "assignee": "zuber",
+      "starttime": "16:37",
+      "endtime": "17:37",
+      "id": 6
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

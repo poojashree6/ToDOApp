@@ -1,0 +1,96 @@
+<a class="dropdown-item"><button type="button" class="btn btn-success" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        ADD ToDo
+    </button></a>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Todo Entry</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="TodoForm">
+                    <div class="form-group mb-3">
+                        <label for="name">ToDo Name</label>
+                        <input type="text" formControlName="name" name="name" class="form-control" id="name"
+                            aria-describedby="emailHelp" placeholder="Enter ToDo Name">
+                            <span style="color: red;" *ngIf="name && name.invalid && name.touched">This input field is not valid</span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="date">Date</label>
+                        <input type="date" formControlName="date" name="date" class="form-control" id="date"
+                            aria-describedby="emailHelp">
+                            <span style="color: red;" *ngIf="date && date.invalid && date.touched">This input field is not valid</span>
+                    </div>
+                    <label for="category">Category</label>
+                    <select class="form-select" formControlName="category" name="category"  aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option *ngFor="let row of CategoryData " >{{row.name}}</option>
+                    </select>
+                      <!-- <select class="form-select" formControlName="category" name="category" (change)="OnChangeEvent($event)" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option *ngFor="let row of CategoryData " [value]="row.name">{{row.name}}</option>
+                    </select> -->
+                    <div class="form-group mb-3">
+                        <label for="assignee">Assignee</label>
+                        <input type="name" formControlName="assignee" name="assignee" class="form-control" id="assignee"
+                            aria-describedby="emailHelp" placeholder="Enter Assignee">
+                            <span style="color: red;" *ngIf="assignee && assignee.invalid && assignee.touched">This input field is not valid</span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="time"> Start Time</label>
+                        <input type="time" formControlName="starttime" name="time" class="form-control" id=" starttime"
+                            aria-describedby="emailHelp">
+                            <span style="color: red;" *ngIf="starttime && starttime.invalid && starttime.touched">This input field is not valid</span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="time">End Time</label>
+                        <input type="time" formControlName="endtime" name="time" class="form-control" id=" starttime"
+                            aria-describedby="emailHelp">
+                            <span style="color: red;" *ngIf="endtime && endtime.invalid && endtime.touched">This input field is not valid</span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">cancel</button>
+                <button (click)="postTodo()" type="button"  class="btn btn-success">ADD</button>
+                <button (click)="updateTodo()" type="button" class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" mt-3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Category</th>
+                <th scope="col">Assignee</th>
+                <th scope="col">Starttime</th>
+                <th scope="col">Endtime</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of TodoData">
+                <td>{{row.id}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.date}}</td>
+                <td>{{row.category}}</td>
+                <td>{{row.assignee}}</td>
+                <td>{{row.starttime}}</td>
+                <td>{{row.endtime}}</td>
+                <td>
+                 <button (click)="onEdit(row)" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Edit</button>&nbsp;
+                    <button (click)="deleteTodo(row)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
